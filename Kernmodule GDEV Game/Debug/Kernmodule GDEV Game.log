@@ -1,0 +1,16 @@
+﻿  DynamicObject.cpp
+  Kernmodule GDEV Game.cpp
+  Object.cpp
+D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Object.cpp(23,41): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Object.cpp(23,29): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+  PhysicsObject.cpp
+  Generating Code...
+  Kernmodule GDEV Game.vcxproj -> D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Debug\Kernmodule GDEV Game.exe
