@@ -1,0 +1,4 @@
+# These files cause an error when commiting them. They appear when the project is open, and disappear when not.
+Browse.VC.db-shm
+Browse.VC.db-wal
+Browse.VC.opendb
