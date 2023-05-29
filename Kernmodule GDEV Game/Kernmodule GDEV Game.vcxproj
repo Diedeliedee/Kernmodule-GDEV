@@ -149,10 +149,12 @@
     <ClCompile Include="Kernmodule GDEV Game.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="PhysicsObject.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="Square.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameObjects.h" />
     <ClInclude Include="Objects.h" />
     <ClInclude Include="Shapes.h" />
   </ItemGroup>

@@ -22,6 +22,9 @@
     <Filter Include="Source Files\Objects">
       <UniqueIdentifier>{916cefa3-a040-4954-abe9-e8d4a2f0730d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GameObjects">
+      <UniqueIdentifier>{2f4e8f4f-0813-4f5f-9783-72c361230e91}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernmodule GDEV Game.cpp">
@@ -42,12 +45,18 @@
     <ClCompile Include="PhysicsObject.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shapes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Objects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

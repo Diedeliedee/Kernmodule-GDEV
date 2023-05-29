@@ -18,5 +18,5 @@ private:
 public:
 	Square(int w, int h);
 
-	virtual void draw(sf::RenderWindow& window, int x, int y);
+	void draw(sf::RenderWindow& window, int x, int y) override;
 };

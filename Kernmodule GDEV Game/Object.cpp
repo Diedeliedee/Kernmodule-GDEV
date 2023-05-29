@@ -1,9 +1,16 @@
 #include "Objects.h"
 
-Object::Object(Shape shape, float xPos, float yPos)
+Object::Object(Shape* shape, float xPos, float yPos)
 {
 	setPosition(xPos, yPos);
-	this->shape = shape;		//	This creates a shallow copy.
+	sprite = shape;
+}
+
+Object::~Object()
+{
+	//	If the object is ever deleted, the sprite variable which is a reference to memory will get deleted as well.
+	//	But the memory itself won't. Causing the Shape object to continue existing, without any reference to it.
+	delete sprite;
 }
 
 void Object::setPosition(float xPos, float yPos) 
@@ -20,5 +27,5 @@ void Object::move(float xOffset, float yOffset)
 
 void Object::draw(sf::RenderWindow& window)
 {
-	shape.draw(window, position.x, position.y);
+	sprite->draw(window, position.x, position.y);
 }

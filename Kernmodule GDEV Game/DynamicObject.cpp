@@ -1,6 +1,6 @@
 #include "Objects.h"
 
-DynamicObject::DynamicObject(Shape shape, float xPos, float yPos, float xVel, float yVel) : Object(shape, xPos, yPos)
+DynamicObject::DynamicObject(Shape* shape, float xPos, float yPos, float xVel, float yVel) : Object(shape, xPos, yPos)
 {
 	velocity.x = xPos;
 	velocity.y = yPos;

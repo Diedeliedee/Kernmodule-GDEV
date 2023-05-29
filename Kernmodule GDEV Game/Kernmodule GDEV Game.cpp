@@ -4,17 +4,22 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(512, 512), "I have no idea what I'm doing.");
+	int screenWidth = 512;
+	int screenHeight = 512;
+	int frameRate = 60;
+	float deltaTime = 1 / frameRate;
+
+	sf::RenderWindow window(sf::VideoMode(screenWidth, screenHeight), "I have no idea what I'm doing.");
 
 
 #pragma region Test
 
-	Object testObject(Square(50, 50), 100, 100);
+	Object testObject(new Square(50, 50), 100, 100);
 
 #pragma endregion
 
 
-	window.setFramerateLimit(60);   //  Setting a limit on the framerate.
+	window.setFramerateLimit(frameRate);   //  Setting a limit on the framerate.
 	while (window.isOpen())         //  Main loop.
 	{
 		sf::Event event;
