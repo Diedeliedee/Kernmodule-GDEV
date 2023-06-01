@@ -11,6 +11,6 @@ Square::Square(int w, int h)
 
 void Square::draw(sf::RenderWindow& window, int x, int y)
 {
-	shape.setPosition(x, y);
+	shape.setPosition(x - size.x / 2, y - size.y / 2);
 	window.draw(shape);
 }

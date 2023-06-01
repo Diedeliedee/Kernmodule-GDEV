@@ -54,6 +54,9 @@
     <ClCompile Include="PlayerInput.cpp">
       <Filter>Source Files\GameObjects\Player</Filter>
     </ClCompile>
+    <ClCompile Include="InputObject.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shapes.h">

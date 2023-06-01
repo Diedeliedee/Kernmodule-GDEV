@@ -2,17 +2,13 @@
 #include "Objects.h"
 #include "PlayerInput.h"
 
-class Player : public DynamicObject
+class Player : public InputObject
 {
 private:
 	PlayerInput controls;
 
 	int width = 100;
 	int height = 20;
-
-	float speed = 100;
-	float mass = 10;
-	float drag = 10;
 
 public:
 	Player(int xPos, int yPos);

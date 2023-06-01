@@ -14,7 +14,7 @@ int main()
 
 #pragma region Test
 
-	Player player(50, 50);
+	Player player(screenWidth / 2, screenHeight * 0.75f);
 
 #pragma endregion
 

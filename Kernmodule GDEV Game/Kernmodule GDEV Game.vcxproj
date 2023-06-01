@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DynamicObject.cpp" />
+    <ClCompile Include="InputObject.cpp" />
     <ClCompile Include="Kernmodule GDEV Game.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="PhysicsObject.cpp" />

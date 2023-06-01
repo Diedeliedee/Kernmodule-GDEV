@@ -47,10 +47,10 @@ public:
 class PhysicsObject : public DynamicObject
 {
 protected:
-	sf::Vector2f acceleration;
-	sf::Vector2f force;
 	float mass;
 	float drag;
+	sf::Vector2f acceleration;
+	sf::Vector2f force;
 
 public:
 	PhysicsObject();
@@ -60,6 +60,21 @@ public:
 	PhysicsObject(Shape* shape, sf::Vector2f pos, float ma, float dr);
 
 	PhysicsObject(Shape* shape, float xPos, float yPos);
+
+	void iterateMovement(float deltaTime) override;
+};
+
+class InputObject : public DynamicObject
+{
+protected:
+	float speed;
+	float grip;
+	sf::Vector2f desiredVelocity;
+
+public:
+	InputObject();
+
+	InputObject(Shape* shape, sf::Vector2f pos, float sp, float gr);
 
 	void iterateMovement(float deltaTime) override;
 };
