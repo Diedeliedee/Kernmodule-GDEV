@@ -6,7 +6,7 @@ int main()
 {
 	int screenWidth = 512;
 	int screenHeight = 512;
-	int frameRate = 60;
+	float frameRate = 60;
 	float deltaTime = 1 / frameRate;
 
 	sf::RenderWindow window(sf::VideoMode(screenWidth, screenHeight), "I have no idea what I'm doing.");

@@ -14,6 +14,8 @@ protected:
 	Shape* sprite;
 
 public:
+	Object();
+
 	Object(Shape* shape, float xPos, float yPos);
 
 	~Object();
@@ -33,6 +35,8 @@ protected:
 	sf::Vector2f velocity;
 
 public:
+	DynamicObject();
+
 	DynamicObject(Shape* shape, float xPos, float yPos, float xVel, float yVel);
 
 	virtual void iterateMovement(float deltaTime);
@@ -49,6 +53,8 @@ protected:
 	float drag;
 
 public:
+	PhysicsObject();
+
 	PhysicsObject(Shape* shape, sf::Vector2f pos, sf::Vector2f vel, sf::Vector2f acceleration);
 
 	PhysicsObject(Shape* shape, sf::Vector2f pos, float ma, float dr);

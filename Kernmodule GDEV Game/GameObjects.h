@@ -2,7 +2,7 @@
 #include "Objects.h"
 #include "PlayerInput.h"
 
-class Player : public PhysicsObject
+class Player : public DynamicObject
 {
 private:
 	PlayerInput controls;
@@ -10,7 +10,7 @@ private:
 	int width = 100;
 	int height = 20;
 
-	float speed = 10;
+	float speed = 100;
 	float mass = 10;
 	float drag = 10;
 

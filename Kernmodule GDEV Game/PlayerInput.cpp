@@ -1,6 +1,6 @@
 #include "PlayerInput.h"
 
-sf::Vector2i PlayerInput::getInput()
+sf::Vector2f PlayerInput::getInput()
 {
 	dpad.x = 0;
 	dpad.y = 0;
@@ -10,5 +10,5 @@ sf::Vector2i PlayerInput::getInput()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) dpad.x--;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) dpad.x++;
 
-	return dpad;
+	return sf::Vector2f(dpad.x, dpad.y);
 }

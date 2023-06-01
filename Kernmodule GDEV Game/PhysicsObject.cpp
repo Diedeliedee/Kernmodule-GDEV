@@ -1,5 +1,10 @@
 #include "Objects.h"
 
+PhysicsObject::PhysicsObject() : DynamicObject()
+{
+
+}
+
 PhysicsObject::PhysicsObject(Shape* shape, sf::Vector2f pos, sf::Vector2f vel, sf::Vector2f accel) : DynamicObject(shape, pos.x, pos.y, vel.x, vel.y)
 {
 	acceleration.x = accel.y;

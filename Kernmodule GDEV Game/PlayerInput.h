@@ -7,5 +7,5 @@ private:
 	sf::Vector2i dpad;
 
 public:
-	sf::Vector2i getInput();
+	sf::Vector2f getInput();
 };

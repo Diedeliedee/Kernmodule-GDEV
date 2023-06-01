@@ -1,16 +1,18 @@
-#include "GameObjects.h"
 #include <iostream>
+#include "GameObjects.h"
 
-Player::Player(int xPos, int yPos) : PhysicsObject(new Square(width, height), sf::Vector2f(xPos, yPos), mass, drag)
+Player::Player(int xPos, int yPos) : DynamicObject()
 {
-	
+	sprite = new Square(width, height);
+	setPosition(xPos, yPos);
 }
 
 void Player::tick(float deltaTime)
 {
-	sf::Vector2i input = controls.getInput();
+	sf::Vector2f input = controls.getInput();
 
-	std::cout << position.x << std::endl;
-	acceleration.x = input.x;
+	velocity.x = input.x * speed;
 	iterateMovement(deltaTime);
+
+	//std::cout << "Input: " << input.x << ". Speed: " << speed << ". Delta time: " << deltaTime << "." << std::endl;
 }
