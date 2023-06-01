@@ -25,6 +25,9 @@
     <Filter Include="Source Files\GameObjects">
       <UniqueIdentifier>{2f4e8f4f-0813-4f5f-9783-72c361230e91}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GameObjects\Player">
+      <UniqueIdentifier>{6c962601-c0e6-41d4-bbd3-83de6cb89d2f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernmodule GDEV Game.cpp">
@@ -46,7 +49,10 @@
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>Source Files\GameObjects</Filter>
+      <Filter>Source Files\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerInput.cpp">
+      <Filter>Source Files\GameObjects\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameObjects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

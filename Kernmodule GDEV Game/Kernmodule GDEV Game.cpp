@@ -1,6 +1,6 @@
 #include <iostream>
 #include "SFML\Graphics.hpp"
-#include "Objects.h"
+#include "GameObjects.h"
 
 int main()
 {
@@ -14,13 +14,13 @@ int main()
 
 #pragma region Test
 
-	Object testObject(new Square(50, 50), 100, 100);
+	Player player(50, 50);
 
 #pragma endregion
 
 
-	window.setFramerateLimit(frameRate);   //  Setting a limit on the framerate.
-	while (window.isOpen())         //  Main loop.
+	window.setFramerateLimit(frameRate);	//  Setting a limit on the framerate.
+	while (window.isOpen())					//  Main loop.
 	{
 		sf::Event event;
 
@@ -33,7 +33,8 @@ int main()
 
 		//	Drawing.
 		window.clear();
-		testObject.draw(window);
+		player.tick(deltaTime);
+		player.draw(window);
 		window.display();
 	}
 	return 0;
