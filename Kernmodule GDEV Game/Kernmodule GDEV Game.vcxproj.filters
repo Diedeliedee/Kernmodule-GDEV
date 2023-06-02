@@ -28,6 +28,12 @@
     <Filter Include="Source Files\GameObjects\Player">
       <UniqueIdentifier>{6c962601-c0e6-41d4-bbd3-83de6cb89d2f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Utilities">
+      <UniqueIdentifier>{926d8eed-1a3f-41c9-ab51-9071da1bdba2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities\Math">
+      <UniqueIdentifier>{6e727c85-4ad0-4ef1-b1db-48701495f5a6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernmodule GDEV Game.cpp">
@@ -57,6 +63,12 @@
     <ClCompile Include="InputObject.cpp">
       <Filter>Source Files\Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Source Files\Utilities\Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shapes.h">
@@ -69,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PlayerInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

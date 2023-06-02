@@ -1,7 +1,12 @@
 #include "Shapes.h"
 #include "SFML/Graphics.hpp"
 
-void Shape::draw(sf::RenderWindow& window, int x, int y)
+Vector2 Shape::getBounds() 
+{
+	return Vector2(0, 0);
+}
+
+void Shape::draw(sf::RenderWindow& window, Vector2 pos)
 {
 
 }

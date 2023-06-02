@@ -1,19 +1,20 @@
 #include <iostream>
 #include "GameObjects.h"
 
-Player::Player(int xPos, int yPos) : InputObject()
+Player::Player(Vector2 pos)
 {
-	sprite = new Square(width, height);
-	setPosition(xPos, yPos);
-	speed = 500;
-	grip = 6;
+	m_sprite = new Square(m_width, m_height);
+	setPosition(pos);
+	//m_speed = 500;
+	//m_grip = 6;
 }
 
 void Player::tick(float deltaTime)
 {
-	sf::Vector2f input = controls.getInput();
+	Vector2 input = m_controls.getInput();
 
-	desiredVelocity.x = input.x * speed;
+	//m_desiredVelocity.x = input.x * m_speed;
+	m_velocity.x = input.x * 250;
 	iterateMovement(deltaTime);
 
 	//std::cout << "Input: " << input.x << ". Speed: " << speed << ". Delta time: " << deltaTime << "." << std::endl;

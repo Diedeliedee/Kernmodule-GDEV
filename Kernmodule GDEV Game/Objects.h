@@ -6,23 +6,25 @@
 class Object
 {
 protected:
-	sf::Vector2f position;
+	Vector2 m_position;
 
 	/// This needs to be a pointer, for when creating an object, we want polymorphism when passing in the sprite.
 	/// Without this being a pointer, virtual functions will not work.
 	/// Must do more research on preventing memory leaks with pointers.
-	Shape* sprite;
+	Shape* m_sprite;
 
 public:
 	Object();
 
-	Object(Shape* shape, float xPos, float yPos);
+	Object(Shape* shape, Vector2 pos);
 
 	~Object();
 
-	void setPosition(float xPos, float yPos);
+	bool collidesWith(Object& other);
 
-	void move(float xOffset, float yOffset);
+	void setPosition(Vector2 pos);
+
+	void move(Vector2 offset);
 
 	void draw(sf::RenderWindow& window);
 };
@@ -32,12 +34,12 @@ public:
 class DynamicObject : public Object
 {
 protected:
-	sf::Vector2f velocity;
+	Vector2 m_velocity;
 
 public:
 	DynamicObject();
 
-	DynamicObject(Shape* shape, float xPos, float yPos, float xVel, float yVel);
+	DynamicObject(Shape* shape, Vector2 pos, Vector2 vel);
 
 	virtual void iterateMovement(float deltaTime);
 };
@@ -47,19 +49,16 @@ public:
 class PhysicsObject : public DynamicObject
 {
 protected:
-	float mass;
-	float drag;
-	sf::Vector2f acceleration;
-	sf::Vector2f force;
+	float m_mass;
+	float m_drag;
+
+	Vector2 m_acceleration;
+	Vector2 m_force;
 
 public:
 	PhysicsObject();
 
-	PhysicsObject(Shape* shape, sf::Vector2f pos, sf::Vector2f vel, sf::Vector2f acceleration);
-
-	PhysicsObject(Shape* shape, sf::Vector2f pos, float ma, float dr);
-
-	PhysicsObject(Shape* shape, float xPos, float yPos);
+	PhysicsObject(Shape* shape, Vector2 pos, Vector2 vel);
 
 	void iterateMovement(float deltaTime) override;
 };
@@ -67,14 +66,15 @@ public:
 class InputObject : public DynamicObject
 {
 protected:
-	float speed;
-	float grip;
-	sf::Vector2f desiredVelocity;
+	float m_speed;
+	float m_grip;
+
+	Vector2 m_desiredVelocity;
 
 public:
 	InputObject();
 
-	InputObject(Shape* shape, sf::Vector2f pos, float sp, float gr);
+	InputObject(Shape* shape, Vector2 pos, Vector2 vel);
 
 	void iterateMovement(float deltaTime) override;
 };

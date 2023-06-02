@@ -14,7 +14,8 @@ int main()
 
 #pragma region Test
 
-	Player player(screenWidth / 2, screenHeight * 0.75f);
+	Player player(Vector2(screenWidth / 2, screenHeight * 0.75f));
+	Enemy enemy (screenWidth / 2, Vector2(0, 0));
 
 #pragma endregion
 
@@ -34,6 +35,8 @@ int main()
 		//	Drawing.
 		window.clear();
 		player.tick(deltaTime);
+		//enemy.iterateMovement(deltaTime);
+		//enemy.draw(window);
 		player.draw(window);
 		window.display();
 	}

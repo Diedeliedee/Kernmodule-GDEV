@@ -1,12 +1,2 @@
-﻿  Square.cpp
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Square.cpp(6,11): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Square.cpp(7,11): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
+﻿  Vector2.cpp
   Kernmodule GDEV Game.vcxproj -> D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Debug\Kernmodule GDEV Game.exe

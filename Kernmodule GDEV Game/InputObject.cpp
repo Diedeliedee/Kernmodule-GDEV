@@ -9,19 +9,23 @@ InputObject::InputObject() : DynamicObject()
 
 }
 
-InputObject::InputObject(Shape* shape, sf::Vector2f pos, float sp, float gr) : DynamicObject(shape, pos.x, pos.y, 0, 0)
+InputObject::InputObject(Shape* shape, Vector2 pos, Vector2 vel) : DynamicObject(shape, pos, vel)
 {
-	speed = sp;
-	grip = gr;
+
 }
 
 void InputObject::iterateMovement(float deltaTime)
 {
-	sf::Vector2f steering = desiredVelocity - velocity;
-	float gripFactor = grip * deltaTime;
+	Vector2 steering = m_desiredVelocity - m_velocity;
+	float gripFactor = m_grip * deltaTime;
 
 	if (gripFactor > 1) gripFactor = 1;
-	steering *= gripFactor;
-	velocity += steering;
-	move(velocity.x * deltaTime, velocity.y * deltaTime);
+
+	steering.x *= gripFactor;
+	steering.y *= gripFactor;
+
+	m_velocity.x += steering.x;
+	m_velocity.y += steering.y;
+
+	move(m_velocity * deltaTime);
 }

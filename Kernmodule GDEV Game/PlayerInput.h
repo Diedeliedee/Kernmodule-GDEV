@@ -1,11 +1,11 @@
 #pragma once
-#include "SFML/Graphics.hpp"
+#include "Math.h"
 
 class PlayerInput
 {
 private:
-	sf::Vector2i dpad;
+	Vector2 dpad;
 
 public:
-	sf::Vector2f getInput();
+	Vector2 getInput();
 };

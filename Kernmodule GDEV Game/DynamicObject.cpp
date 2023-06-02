@@ -5,13 +5,12 @@ DynamicObject::DynamicObject() : Object()
 
 }
 
-DynamicObject::DynamicObject(Shape* shape, float xPos, float yPos, float xVel, float yVel) : Object(shape, xPos, yPos)
+DynamicObject::DynamicObject(Shape* shape, Vector2 pos, Vector2 vel) : Object(shape, pos)
 {
-	velocity.x = xVel;
-	velocity.y = yVel;
+	m_velocity = vel;
 }
 
 void DynamicObject::iterateMovement(float deltaTime)
 {
-	move(velocity.x * deltaTime, velocity.y * deltaTime);
+	move(m_velocity * deltaTime);
 }
