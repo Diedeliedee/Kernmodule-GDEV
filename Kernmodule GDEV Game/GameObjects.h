@@ -2,7 +2,7 @@
 #include "Objects.h"
 #include "PlayerInput.h"
 
-class Player : public DynamicObject
+class Player : public InputObject
 {
 private:
 	int m_width = 100;
@@ -26,4 +26,6 @@ private:
 
 public:
 	Enemy(float xPos, Vector2 vel);
+
+	void tick(float deltaTime);
 };

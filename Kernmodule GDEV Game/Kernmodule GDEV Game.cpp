@@ -35,8 +35,8 @@ int main()
 		//	Drawing.
 		window.clear();
 		player.tick(deltaTime);
-		//enemy.iterateMovement(deltaTime);
-		//enemy.draw(window);
+		enemy.tick(deltaTime);
+		enemy.draw(window);
 		player.draw(window);
 		window.display();
 	}

@@ -14,6 +14,14 @@ Vector2::Vector2(float x, float y)
 	std::cout << "New Vector2 created! (" << this->x << ", " << this->y << ")." << std::endl;
 }
 
+/*
+Vector2::Vector2(const Vector2& other)
+{
+	x = other.x;
+	y = other.y;
+}
+*/
+
 float Vector2::magnitude()
 {
 	return sqrtf(sqrMagnitude());

@@ -11,6 +11,8 @@ public:
 
 	Vector2(float x, float y);
 
+	//Vector2(const Vector2& other);
+
 	float magnitude();
 
 	float sqrMagnitude();
@@ -21,6 +23,8 @@ public:
 
 	sf::Vector2f cast();
 
+	//	This should be an assignment operator, but this doesn't work.
+	/*
 	Vector2 operator=(const Vector2& other)
 	{
 		///	This is supposedly protection against a phenomenon called 'self assignment'.
@@ -29,6 +33,7 @@ public:
 
 		return Vector2(other.x, other.y);
 	}
+	*/
 
 	Vector2 operator+(const Vector2& other)
 	{
