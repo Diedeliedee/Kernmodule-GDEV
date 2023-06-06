@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include "Math.h"
+#include "Structs.h"
 
 Vector2::Vector2()
 {
@@ -11,7 +11,13 @@ Vector2::Vector2(float x, float y)
 {
 	this->x = x;
 	this->y = y;
-	std::cout << "New Vector2 created! (" << this->x << ", " << this->y << ")." << std::endl;
+	//std::cout << "New Vector2 created! (" << this->x << ", " << this->y << ")." << std::endl;
+}
+
+Vector2::Vector2(sf::Vector2f vec)
+{
+	x = vec.x;
+	y = vec.y;
 }
 
 /*

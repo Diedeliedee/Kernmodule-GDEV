@@ -1,10 +1,16 @@
 #include <iostream>
 #include "GameObjects.h"
 
+Player::Player() 
+{
+
+}
+
 Player::Player(Vector2 pos)
 {
+	m_sprite = new Square(100, 20);
+
 	setPosition(pos);
-	m_sprite = new Square(m_width, m_height);
 
 	m_speed = 500;
 	m_grip = 6;

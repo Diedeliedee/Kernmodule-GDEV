@@ -1,5 +1,5 @@
 #pragma once
-#include "Math.h"
+#include "Structs.h"
 
 class PlayerInput
 {

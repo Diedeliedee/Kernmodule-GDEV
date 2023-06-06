@@ -1,11 +1,15 @@
 #include "GameObjects.h"
 
+Enemy::Enemy()
+{
+
+}
+
 Enemy::Enemy(float xPos, Vector2 vel)
 {
-	//setPosition(Vector2(xPos, 0 - m_height / 2));
-	setPosition(Vector2(50, 50));
-	m_sprite = new Square(m_width, m_height);
+	m_sprite = new Square(10, 10);
 
+	setPosition(m_sprite->bounds.getOffset(Vector2(xPos, 0), Vector2(0, -1)));
 	m_velocity = vel;
 
 	m_mass = 1;

@@ -5,12 +5,11 @@
 class Player : public InputObject
 {
 private:
-	int m_width = 100;
-	int m_height = 20;
-
 	PlayerInput m_controls;
 
 public:
+	Player();
+
 	Player(Vector2 pos);
 
 	void tick(float deltaTime);
@@ -21,10 +20,9 @@ public:
 class Enemy : public PhysicsObject
 {
 private:
-	int m_width = 10;
-	int m_height = 10;
-
 public:
+	Enemy();
+
 	Enemy(float xPos, Vector2 vel);
 
 	void tick(float deltaTime);

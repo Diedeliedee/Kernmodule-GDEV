@@ -1,6 +1,6 @@
 #include <iostream>
 #include "SFML\Graphics.hpp"
-#include "GameObjects.h"
+#include "Managers.h"
 
 int main()
 {
@@ -14,8 +14,7 @@ int main()
 
 #pragma region Test
 
-	Player player(Vector2(screenWidth / 2, screenHeight * 0.75f));
-	Enemy enemy (screenWidth / 2, Vector2(0, 0));
+	EntityManager entities(screenWidth, screenHeight);
 
 #pragma endregion
 
@@ -32,12 +31,12 @@ int main()
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) window.close();	//	Close window if escape is pressed.
 		}
 
+		//	Tick.
+		entities.tick(deltaTime);
+		
 		//	Drawing.
 		window.clear();
-		player.tick(deltaTime);
-		enemy.tick(deltaTime);
-		enemy.draw(window);
-		player.draw(window);
+		entities.draw(window);
 		window.display();
 	}
 	return 0;

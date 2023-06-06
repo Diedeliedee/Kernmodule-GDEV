@@ -145,8 +145,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bounds.cpp" />
     <ClCompile Include="DynamicObject.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="InputObject.cpp" />
     <ClCompile Include="Kernmodule GDEV Game.cpp" />
     <ClCompile Include="Object.cpp" />
@@ -159,7 +161,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObjects.h" />
-    <ClInclude Include="Math.h" />
+    <ClInclude Include="Managers.h" />
+    <ClInclude Include="Structs.h" />
     <ClInclude Include="Objects.h" />
     <ClInclude Include="PlayerInput.h" />
     <ClInclude Include="Shapes.h" />

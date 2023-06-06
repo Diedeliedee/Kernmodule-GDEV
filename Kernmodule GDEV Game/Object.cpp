@@ -3,7 +3,7 @@
 
 Object::Object()
 {
-
+	
 }
 
 Object::Object(Shape* shape, Vector2 pos)
@@ -21,13 +21,7 @@ Object::~Object()
 
 bool Object::collidesWith(Object& other) 
 {
-	Vector2 bounds = m_sprite->getBounds();
-	Vector2 otherBounds = other.m_sprite->getBounds();
-
-	return	m_position.x + bounds.x / 2 >= other.m_position.x - otherBounds.x / 2 ||
-			m_position.x - bounds.x / 2 <= other.m_position.x + otherBounds.x / 2 &&
-			m_position.y + bounds.y / 2 >= other.m_position.y - otherBounds.y / 2 ||
-			m_position.y - bounds.y / 2 <= other.m_position.y + otherBounds.y / 2;
+	return m_sprite->bounds.collidesWith(other.m_sprite->bounds, m_position, other.m_position);
 }
 
 void Object::setPosition(Vector2 pos) 
