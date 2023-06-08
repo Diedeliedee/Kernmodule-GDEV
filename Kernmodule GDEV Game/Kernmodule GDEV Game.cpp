@@ -14,7 +14,7 @@ int main()
 
 #pragma region Test
 
-	EntityManager entities(screenWidth, screenHeight);
+	EntityManager entities(window);
 
 #pragma endregion
 
@@ -32,7 +32,7 @@ int main()
 		}
 
 		//	Tick.
-		entities.tick(deltaTime);
+		entities.tick(window, deltaTime);
 		
 		//	Drawing.
 		window.clear();

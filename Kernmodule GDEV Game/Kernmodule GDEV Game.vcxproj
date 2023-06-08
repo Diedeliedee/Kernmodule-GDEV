@@ -148,6 +148,7 @@
     <ClCompile Include="Bounds.cpp" />
     <ClCompile Include="DynamicObject.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyManager.cpp" />
     <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="InputObject.cpp" />
     <ClCompile Include="Kernmodule GDEV Game.cpp" />

@@ -19,11 +19,12 @@ public:
 
 class Enemy : public PhysicsObject
 {
-private:
 public:
-	Enemy();
+	int id;
 
-	Enemy(float xPos, Vector vel);
+	Enemy(int id);
+
+	Enemy(int id, float xPos, Vector vel);
 
 	void tick(float deltaTime);
 };

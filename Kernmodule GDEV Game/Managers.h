@@ -10,16 +10,38 @@ private:
 	/// That data, since it's on the stack, and deleted once the scope is left, will probably disappear as well.
 	/// That causes these variables to become "null" in plain C# terms.
 	Player* m_player;
-	Enemy* m_enemy;
 
-	Bounds m_screenBounds;
+	EnemyManager* m_enemyManager;
 
 public:
-	EntityManager(float screenWidth, float screenHeight);
+	EntityManager(sf::RenderWindow& window);
 
 	~EntityManager();
 
-	void tick(float deltaTime);
+	void tick(sf::RenderWindow& window, float deltaTime);
+
+	void draw(sf::RenderWindow& window);
+};
+
+
+
+class EnemyManager
+{
+private:
+	std::list<Enemy> m_enemies;
+
+	int m_idCounter;
+
+public:
+	EnemyManager();
+
+	EnemyManager(sf::RenderWindow& window);
+
+	void tick(sf::RenderWindow& window, Player& player, float deltaTime);
+
+	void spawn(float xPos);
+
+	void despawn(Enemy& enemy);
 
 	void draw(sf::RenderWindow& window);
 };
