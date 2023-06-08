@@ -25,6 +25,6 @@ bool Bounds::collidesWith(Bounds& other, Vector pos, Vector otherPos)
 	Vector otherTopLeft		= other.getOffset(otherPos, Vector(-1, -1));
 	Vector otherBottomRight	= other.getOffset(otherPos, Vector(1, 1));
 
-	return	bottomRight.x >= otherTopLeft.x || topLeft.x <= otherBottomRight.x &&
-			bottomRight.y >= otherTopLeft.y || topLeft.y <= otherBottomRight.y;
+	return	(bottomRight.x >= otherTopLeft.x && topLeft.x <= otherBottomRight.x) &&
+			(bottomRight.y >= otherTopLeft.y && topLeft.y <= otherBottomRight.y);
 }

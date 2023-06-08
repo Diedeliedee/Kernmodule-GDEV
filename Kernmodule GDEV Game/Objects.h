@@ -9,8 +9,8 @@ protected:
 	Vector m_position;
 
 	/// This needs to be a pointer, for when creating an object, we want polymorphism when passing in the sprite.
+	/// Assigning a variable with a stack created variable will most likely cause that info to dissapear once the scope is left.
 	/// Without this being a pointer, virtual functions will not work.
-	/// Must do more research on preventing memory leaks with pointers.
 	Shape* m_sprite;
 
 public:
