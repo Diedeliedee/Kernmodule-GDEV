@@ -6,7 +6,7 @@ Object::Object()
 	
 }
 
-Object::Object(Shape* shape, Vector2 pos)
+Object::Object(Shape* shape, Vector pos)
 {
 	setPosition(pos);
 	m_sprite = shape;
@@ -24,13 +24,13 @@ bool Object::collidesWith(Object& other)
 	return m_sprite->bounds.collidesWith(other.m_sprite->bounds, m_position, other.m_position);
 }
 
-void Object::setPosition(Vector2 pos) 
+void Object::setPosition(Vector pos)
 {
 	m_position = pos;
 	std::cout << "Object has been set to: (" << m_position.x << "," << m_position.y << ") units." << std::endl;
 }
 
-void Object::move(Vector2 offset)
+void Object::move(Vector offset)
 {
 	setPosition(m_position + offset);
 	std::cout << "Object has been moved by: (" << offset.x << "," << offset.y << ") units." << std::endl;

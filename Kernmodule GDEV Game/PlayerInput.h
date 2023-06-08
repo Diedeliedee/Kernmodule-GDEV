@@ -4,8 +4,8 @@
 class PlayerInput
 {
 private:
-	Vector2 dpad;
+	Vector dpad;
 
 public:
-	Vector2 getInput();
+	Vector getInput();
 };

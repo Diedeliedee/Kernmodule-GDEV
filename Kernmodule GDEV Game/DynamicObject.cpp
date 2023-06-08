@@ -5,7 +5,7 @@ DynamicObject::DynamicObject() : Object()
 
 }
 
-DynamicObject::DynamicObject(Shape* shape, Vector2 pos, Vector2 vel) : Object(shape, pos)
+DynamicObject::DynamicObject(Shape* shape, Vector pos, Vector vel) : Object(shape, pos)
 {
 	m_velocity = vel;
 }

@@ -10,7 +10,7 @@ private:
 public:
 	Player();
 
-	Player(Vector2 pos);
+	Player(Vector pos);
 
 	void tick(float deltaTime);
 };
@@ -23,7 +23,7 @@ private:
 public:
 	Enemy();
 
-	Enemy(float xPos, Vector2 vel);
+	Enemy(float xPos, Vector vel);
 
 	void tick(float deltaTime);
 };

@@ -2,8 +2,8 @@
 
 EntityManager::EntityManager(float screenWidth, float screenHeight)
 {
-	m_player = Player(Vector2(screenWidth / 2, screenHeight * 0.75f));
-	m_enemy = Enemy(screenWidth / 2, Vector2(0, 0));
+	m_player = Player(Vector(screenWidth / 2, screenHeight * 0.75f));
+	m_enemy = Enemy(screenWidth / 2, Vector(0, 0));
 
 	m_screenBounds = Bounds(screenWidth, screenHeight);
 }

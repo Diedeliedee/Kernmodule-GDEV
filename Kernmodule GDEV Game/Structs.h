@@ -1,17 +1,17 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 
-class Vector2
+class Vector
 {
 public:
 	float x;
 	float y;
 
-	Vector2();
+	Vector();
 
-	Vector2(float x, float y);
+	Vector(float x, float y);
 
-	Vector2(sf::Vector2f vec);
+	Vector(sf::Vector2f vec);
 
 	//Vector2(const Vector2& other);
 
@@ -19,9 +19,9 @@ public:
 
 	float sqrMagnitude();
 
-	Vector2 rounded();
+	Vector rounded();
 
-	Vector2 normalized();
+	Vector normalized();
 
 	sf::Vector2f cast();
 
@@ -37,24 +37,24 @@ public:
 	}
 	*/
 
-	Vector2 operator+(const Vector2& other)
+	Vector operator+(const Vector& other)
 	{
-		return Vector2(x + other.x, y + other.y);
+		return Vector(x + other.x, y + other.y);
 	}
 
-	Vector2 operator-(const Vector2& other)
+	Vector operator-(const Vector& other)
 	{
-		return Vector2(x - other.x, y - other.y);
+		return Vector(x - other.x, y - other.y);
 	}
 
-	Vector2 operator*(const float other)
+	Vector operator*(const float other)
 	{
-		return Vector2(x * other, y * other);
+		return Vector(x * other, y * other);
 	}
 
-	Vector2 operator/(const float other)
+	Vector operator/(const float other)
 	{
-		return Vector2(x / other, y / other);
+		return Vector(x / other, y / other);
 	}
 };
 
@@ -70,7 +70,7 @@ public:
 
 	Bounds(float w, float h);
 
-	Vector2 getOffset(Vector2 pos, Vector2 off);
+	Vector getOffset(Vector pos, Vector off);
 
-	bool collidesWith(Bounds& other, Vector2 pos, Vector2 otherPos);
+	bool collidesWith(Bounds& other, Vector pos, Vector otherPos);
 };

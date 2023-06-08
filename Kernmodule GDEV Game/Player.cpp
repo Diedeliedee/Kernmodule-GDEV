@@ -6,7 +6,7 @@ Player::Player()
 
 }
 
-Player::Player(Vector2 pos)
+Player::Player(Vector pos)
 {
 	m_sprite = new Square(100, 20);
 
@@ -18,7 +18,7 @@ Player::Player(Vector2 pos)
 
 void Player::tick(float deltaTime)
 {
-	Vector2 input = m_controls.getInput();
+	Vector input = m_controls.getInput();
 
 	m_desiredVelocity.x = input.x * m_speed;
 	iterateMovement(deltaTime);

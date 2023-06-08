@@ -5,7 +5,7 @@ PhysicsObject::PhysicsObject() : DynamicObject()
 
 }
 
-PhysicsObject::PhysicsObject(Shape* shape, Vector2 pos, Vector2 vel) : DynamicObject(shape, pos, vel)
+PhysicsObject::PhysicsObject(Shape* shape, Vector pos, Vector vel) : DynamicObject(shape, pos, vel)
 {
 
 }

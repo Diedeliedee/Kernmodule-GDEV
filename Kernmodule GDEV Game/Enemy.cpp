@@ -5,11 +5,11 @@ Enemy::Enemy()
 
 }
 
-Enemy::Enemy(float xPos, Vector2 vel)
+Enemy::Enemy(float xPos, Vector vel)
 {
 	m_sprite = new Square(10, 10);
 
-	setPosition(m_sprite->bounds.getOffset(Vector2(xPos, 0), Vector2(0, -1)));
+	setPosition(m_sprite->bounds.getOffset(Vector(xPos, 0), Vector(0, -1)));
 	m_velocity = vel;
 
 	m_mass = 1;

@@ -2,19 +2,19 @@
 #include <cmath>
 #include "Structs.h"
 
-Vector2::Vector2()
+Vector::Vector()
 {
 
 }
 
-Vector2::Vector2(float x, float y) 
+Vector::Vector(float x, float y)
 {
 	this->x = x;
 	this->y = y;
 	//std::cout << "New Vector2 created! (" << this->x << ", " << this->y << ")." << std::endl;
 }
 
-Vector2::Vector2(sf::Vector2f vec)
+Vector::Vector(sf::Vector2f vec)
 {
 	x = vec.x;
 	y = vec.y;
@@ -28,29 +28,29 @@ Vector2::Vector2(const Vector2& other)
 }
 */
 
-float Vector2::magnitude()
+float Vector::magnitude()
 {
 	return sqrtf(sqrMagnitude());
 }
 
-float Vector2::sqrMagnitude()
+float Vector::sqrMagnitude()
 {
 	return x * x + y * y;
 }
 
-Vector2 Vector2::rounded()
+Vector Vector::rounded()
 {
-	return Vector2(roundf(x), roundf(y));
+	return Vector(roundf(x), roundf(y));
 }
 
-Vector2 Vector2::normalized()
+Vector Vector::normalized()
 {
 	float mag = magnitude();
 
-	return Vector2(x / mag, y / mag);
+	return Vector(x / mag, y / mag);
 }
 
-sf::Vector2f Vector2::cast()
+sf::Vector2f Vector::cast()
 {
 	return sf::Vector2f(x, y);
 }
