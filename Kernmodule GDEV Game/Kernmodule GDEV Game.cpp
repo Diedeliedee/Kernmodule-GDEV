@@ -1,6 +1,6 @@
 #include <iostream>
 #include "SFML\Graphics.hpp"
-#include "Managers.h"
+#include "EntityManager.h"
 
 int main()
 {

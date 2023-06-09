@@ -161,8 +161,9 @@
     <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EnemyManager.h" />
     <ClInclude Include="GameObjects.h" />
-    <ClInclude Include="Managers.h" />
+    <ClInclude Include="EntityManager.h" />
     <ClInclude Include="Structs.h" />
     <ClInclude Include="Objects.h" />
     <ClInclude Include="PlayerInput.h" />

@@ -8,8 +8,7 @@ Player::Player()
 
 Player::Player(Vector pos)
 {
-	m_sprite = new Square(100, 20);
-
+	m_sprite = new Square(m_width, m_height);
 	setPosition(pos);
 
 	m_speed = 500;

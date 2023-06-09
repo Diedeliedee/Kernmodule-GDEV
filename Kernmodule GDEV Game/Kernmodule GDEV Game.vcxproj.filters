@@ -37,6 +37,9 @@
     <Filter Include="Source Files\Utilities\Structs">
       <UniqueIdentifier>{df8b028b-e696-4865-8c5c-44110b6b2395}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Managers">
+      <UniqueIdentifier>{f63e1f0e-b123-44a3-a9d9-efc5b44c5298}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernmodule GDEV Game.cpp">
@@ -98,8 +101,11 @@
     <ClInclude Include="Structs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Managers.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="EnemyManager.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityManager.h">
+      <Filter>Header Files\Managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

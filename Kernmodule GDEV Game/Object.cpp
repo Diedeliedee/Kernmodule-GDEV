@@ -3,23 +3,17 @@
 
 Object::Object()
 {
-	
+
 }
 
 Object::Object(Shape* shape, Vector pos)
 {
-	setPosition(pos);
 	m_sprite = shape;
+	setPosition(pos);
 }
 
 Object::~Object()
 {
-	///	If the object is ever deleted, the sprite variable which is a reference to memory will get deleted as well.
-	///	But the memory itself won't. Causing the Shape object to continue existing, without any reference to it.
-
-	/// That also explained the error on drawing the Player, when the Player was not created as a pointer, not appearing when this was commented out.
-	/// If the sprite doesn't get deleted as the player does, it can still technically call the draw function.
-
 	delete m_sprite;
 }
 

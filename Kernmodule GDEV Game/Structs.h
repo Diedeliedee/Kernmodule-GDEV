@@ -11,9 +11,19 @@ public:
 
 	Vector(float x, float y);
 
-	Vector(sf::Vector2f vec);
+	Vector(const Vector& other);
 
-	//Vector2(const Vector2& other);
+	Vector(const sf::Vector2f& other);
+
+	Vector& operator=(const Vector& other);
+
+	Vector operator+(const Vector& other);
+
+	Vector operator-(const Vector& other);
+
+	Vector operator*(const float other);
+
+	Vector operator/(const float other);
 
 	float magnitude();
 
@@ -24,38 +34,6 @@ public:
 	Vector normalized();
 
 	sf::Vector2f cast();
-
-	//	This should be an assignment operator, but this doesn't work.
-	/*
-	Vector2 operator=(const Vector2& other)
-	{
-		///	This is supposedly protection against a phenomenon called 'self assignment'.
-		/// I suppose making an object a copy of itself is bad in some way, but I can't precisely figure out why.
-		if (this == &other) return *this;
-
-		return Vector2(other.x, other.y);
-	}
-	*/
-
-	Vector operator+(const Vector& other)
-	{
-		return Vector(x + other.x, y + other.y);
-	}
-
-	Vector operator-(const Vector& other)
-	{
-		return Vector(x - other.x, y - other.y);
-	}
-
-	Vector operator*(const float other)
-	{
-		return Vector(x * other, y * other);
-	}
-
-	Vector operator/(const float other)
-	{
-		return Vector(x / other, y / other);
-	}
 };
 
 
@@ -69,6 +47,10 @@ public:
 	Bounds();
 
 	Bounds(float w, float h);
+
+	Bounds(const Bounds& other);
+
+	Bounds& operator=(const Bounds& other);
 
 	Vector getOffset(Vector pos, Vector off);
 

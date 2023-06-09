@@ -1,24 +1,2 @@
 ﻿  EnemyManager.cpp
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Managers.h(14,14): error C2143: syntax error: missing ';' before '*'
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Managers.h(14,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Managers.h(14,30): error C2238: unexpected token(s) preceding ';'
-  EntityManager.cpp
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Managers.h(14,14): error C2143: syntax error: missing ';' before '*'
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Managers.h(14,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Managers.h(14,30): error C2238: unexpected token(s) preceding ';'
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\EntityManager.cpp(6,50): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\EntityManager.cpp(7,2): error C2065: 'm_enemyManager': undeclared identifier
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\EntityManager.cpp(13,9): error C2065: 'm_enemyManager': undeclared identifier
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\EntityManager.cpp(13,23): error C2541: 'delete': cannot delete objects that are not pointers
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\EntityManager.cpp(19,2): error C2065: 'm_enemyManager': undeclared identifier
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\EntityManager.cpp(25,2): error C2065: 'm_enemyManager': undeclared identifier
-  Kernmodule GDEV Game.cpp
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Managers.h(14,14): error C2143: syntax error: missing ';' before '*'
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Managers.h(14,14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Managers.h(14,30): error C2238: unexpected token(s) preceding ';'
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Kernmodule GDEV Game.cpp(22,27): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-  Generating Code...
+  Kernmodule GDEV Game.vcxproj -> D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Debug\Kernmodule GDEV Game.exe

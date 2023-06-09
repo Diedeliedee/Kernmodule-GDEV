@@ -5,14 +5,12 @@ Enemy::Enemy(int id)
 	this->id = id;
 }
 
-Enemy::Enemy(int id, float xPos, Vector vel)
+Enemy::Enemy(int id, float xPos)
 {
 	this->id = id;
 
-	m_sprite = new Square(10, 10);
-
+	m_sprite = new Square(m_width, m_height);
 	setPosition(m_sprite->bounds.getOffset(Vector(xPos, 0), Vector(0, -1)));
-	m_velocity = vel;
 
 	m_mass = 1;
 	m_drag = 0;

@@ -7,6 +7,13 @@ Square::Square(int w, int h)
 	m_shape.setSize(Vector(w, h).cast());
 }
 
+Square& Square::operator=(const Square& other)
+{
+	bounds = other.bounds;
+	m_shape.setSize(sf::Vector2f(bounds.width, bounds.height));
+	return *this;
+}
+
 void Square::draw(sf::RenderWindow& window, Vector pos)
 {
 	m_shape.setPosition(bounds.getOffset(pos, Vector(-1, -1)).cast());

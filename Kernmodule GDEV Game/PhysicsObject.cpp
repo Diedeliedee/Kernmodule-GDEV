@@ -2,12 +2,14 @@
 
 PhysicsObject::PhysicsObject() : DynamicObject()
 {
-
+	m_mass = 0;
+	m_drag = 0;
 }
 
 PhysicsObject::PhysicsObject(Shape* shape, Vector pos, Vector vel) : DynamicObject(shape, pos, vel)
 {
-
+	m_mass = 0;
+	m_drag = 0;
 }
 
 void PhysicsObject::iterateMovement(float deltaTime)

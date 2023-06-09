@@ -7,6 +7,8 @@ class Shape
 public:
 	Bounds bounds;
 
+	Shape();
+
 	virtual void draw(sf::RenderWindow& window, Vector pos);
 };
 
@@ -19,6 +21,8 @@ protected:
 
 public:
 	Square(int w, int h);
+
+	Square& operator=(const Square& other);
 
 	void draw(sf::RenderWindow& window, Vector pos) override;
 };

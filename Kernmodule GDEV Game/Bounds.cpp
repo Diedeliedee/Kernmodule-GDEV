@@ -2,14 +2,27 @@
 
 Bounds::Bounds()
 {
-
+	width = 0;
+	height = 0;
 }
-
 
 Bounds::Bounds(float w, float h)
 {
 	width = w;
 	height = h;
+}
+
+Bounds::Bounds(const Bounds& other)
+{
+	width = other.width;
+	height = other.height;
+}
+
+Bounds& Bounds::operator=(const Bounds& other) 
+{
+	width = other.width;
+	height = other.height;
+	return *this;
 }
 
 Vector Bounds::getOffset(Vector pos, Vector off)

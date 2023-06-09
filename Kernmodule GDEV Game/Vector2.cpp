@@ -4,7 +4,8 @@
 
 Vector::Vector()
 {
-
+	x = 0;
+	y = 0;
 }
 
 Vector::Vector(float x, float y)
@@ -14,19 +15,44 @@ Vector::Vector(float x, float y)
 	//std::cout << "New Vector2 created! (" << this->x << ", " << this->y << ")." << std::endl;
 }
 
-Vector::Vector(sf::Vector2f vec)
-{
-	x = vec.x;
-	y = vec.y;
-}
-
-/*
-Vector2::Vector2(const Vector2& other)
+Vector::Vector(const Vector& other)
 {
 	x = other.x;
 	y = other.y;
 }
-*/
+
+Vector::Vector(const sf::Vector2f& other)
+{
+	x = other.x;
+	y = other.y;
+}
+
+Vector& Vector::operator=(const Vector& other)
+{
+	x = other.x;
+	y = other.y;
+	return *this;
+}
+
+Vector Vector::operator+(const Vector& other)
+{
+	return Vector(x + other.x, y + other.y);
+}
+
+Vector Vector::operator-(const Vector& other)
+{
+	return Vector(x - other.x, y - other.y);
+}
+
+Vector Vector::operator*(const float other)
+{
+	return Vector(x * other, y * other);
+}
+
+Vector Vector::operator/(const float other)
+{
+	return Vector(x / other, y / other);
+}
 
 float Vector::magnitude()
 {
