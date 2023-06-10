@@ -8,9 +8,10 @@ EnemyManager::EnemyManager()
 
 void EnemyManager::tick(sf::RenderWindow& window, Player& player, float deltaTime)
 {
+	auto enemiesToDespawn = std::list<Enemy>();
+
 	//	Updating the enemies.
-	auto it = m_enemies.begin();
-	for (auto it = m_enemies.begin(); it != m_enemies.end(); it++)
+	for (auto it = m_enemies.begin(); it != m_enemies.end();)
 	{
 		(*it)->tick(deltaTime);
 
@@ -19,8 +20,12 @@ void EnemyManager::tick(sf::RenderWindow& window, Player& player, float deltaTim
 		if ((*it)->collidesWith(player))
 		{
 			std::cout << "Enemy has been hit!" << std::endl;
-			//despawn(**it);
+			 it = despawn(*(*it));
+			 break;
 		}
+
+		//	Only iterate forward if the enemy in this iteration has not been deleted.
+		it++;
 	};
 
 	//	Regulating enemy spawning
@@ -36,7 +41,7 @@ void EnemyManager::spawn(float xPos)
 	m_enemies.push_front(new Enemy(m_idCounter++, xPos));
 }
 
-void EnemyManager::despawn(Enemy& enemy)
+std::list<Enemy*>::iterator EnemyManager::despawn(Enemy& enemy)
 {
 	auto it = m_enemies.begin();
 	for (it; it != m_enemies.end(); it++)
@@ -45,7 +50,7 @@ void EnemyManager::despawn(Enemy& enemy)
 		break;
 	}
 	delete (*it);
-	m_enemies.erase(it);
+	return m_enemies.erase(it);
 }
 
 void EnemyManager::draw(sf::RenderWindow& window)

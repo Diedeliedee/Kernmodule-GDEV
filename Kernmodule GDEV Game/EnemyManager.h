@@ -20,7 +20,7 @@ public:
 
 	void spawn(float xPos);
 
-	void despawn(Enemy& enemy);
+	std::list<Enemy*>::iterator despawn(Enemy& enemy);
 
 	void draw(sf::RenderWindow& window);
 };
