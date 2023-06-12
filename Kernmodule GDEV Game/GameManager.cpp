@@ -12,9 +12,10 @@ GameManager::GameManager()
 		m_instance = this;
 	}
 
-	entities = new EntityManager();
-	score = new ScoreManager();
-	camera = new CameraManager();
+	entities	= new EntityManager();
+	score		= new ScoreManager(Vector(screenWidth, screenHeight));
+	camera		= new CameraManager();
+	time		= new TimeManager();
 }
 
 GameManager::~GameManager()
@@ -22,6 +23,7 @@ GameManager::~GameManager()
 	delete entities;
 	delete score;
 	delete camera;
+	delete time;
 
 	///	Since the memory the 'activeWindow' member holds, is one layer above the GameManager,
 	/// I suppose the memory won't get leaked if the manager gets deleted.
@@ -29,7 +31,7 @@ GameManager::~GameManager()
 	//delete activeWindow;
 
 	///	I believe since m_instance is a reference to the class it's in,
-	/// The memory it holds should clear on it's own, if the class it's references to gets deleted.
+	/// the memory it harbors should clear on it's own, if the class it references gets deleted.
 }
 
 GameManager* GameManager::instance()
@@ -39,19 +41,48 @@ GameManager* GameManager::instance()
 
 void GameManager::tick()
 {
-	auto epochTime = std::chrono::system_clock::now().time_since_epoch();
-	auto seed = std::chrono::duration_cast<std::chrono::milliseconds>(epochTime).count();
+	auto epochTime			= std::chrono::system_clock::now().time_since_epoch();
+	auto seed				= std::chrono::duration_cast<std::chrono::milliseconds>(epochTime).count();
+	float scaledDeltaTime	= time->getScaledDeltaTime(deltaTime);
 
 	srand(seed);
 
-	entities->tick(deltaTime);
-	camera->tick(deltaTime);
+	time		->tick(deltaTime);
+	score		->tick(deltaTime);
+	entities	->tick(scaledDeltaTime);
+	camera		->tick(scaledDeltaTime);
+}
+
+std::list<Enemy*>::iterator GameManager::onEnemyCaught(Enemy& enemy)
+{
+	std::cout << "Enemy has been hit!" << std::endl;
+
+	camera->startShake();
+	if (score->reachedScoreGoal(1))
+	{
+		//	Finish game.
+	}
+
+	return entities->getEnemies().despawn(enemy);
+}
+
+std::list<Enemy*>::iterator GameManager::onEnemyEscaped(Enemy& enemy)
+{
+	std::cout << "An enemy has escaped!" << std::endl;
+
+	time->timeScale = 0;
+	if (score->depletedAllTries(1))
+	{
+		//	Lose game.
+	}
+
+	return entities->getEnemies().despawn(enemy);
 }
 
 void GameManager::draw()
 {
-	activeWindow->clear();
-	entities->draw(*activeWindow);
-	score->draw(*activeWindow);
-	activeWindow->display();
+	activeWindow	->clear();
+	score			->draw(*activeWindow);
+	entities		->draw(*activeWindow);
+	activeWindow	->display();
 }

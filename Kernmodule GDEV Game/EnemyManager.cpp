@@ -4,47 +4,47 @@
 
 void EnemyManager::tick(Player& player, float deltaTime)
 {
-	auto game = GameManager::instance();
+	regulateSpawning(deltaTime);
+	regulateEnemies(player, deltaTime);
+}
 
-	//	Updating the enemies.
+void EnemyManager::regulateSpawning(float deltaTime)
+{
+	m_spawnTimer += deltaTime;
+	if (m_spawnTimer < m_maxSpawnInterval) return;
+
+	auto spawnPos = Vector(rand() % GameManager::instance()->screenWidth, -(rand() % m_maxSpawnHeight));
+
+	spawn(spawnPos);
+	m_spawnTimer = 0;
+}
+
+void EnemyManager::regulateEnemies(Player& player, float deltaTime)
+{
 	for (auto it = m_enemies.begin(); it != m_enemies.end();)
 	{
 		(*it)->tick(deltaTime);
 
-		///	Putting and '*' in front of a pointer like this means you're passing in the contents of the pointer,
-		/// and not the pointer itself.
 		if ((*it)->collidesWith(player))
 		{
-			//	Debug:
-			std::cout << "Enemy has been hit!" << std::endl;
-
-			//	Despawning:
-			it = despawn(*(*it));
-
-			//	Score management:
-			game->score->updateScore(1);
-
-			//	Aesthetics:
-			game->camera->startShake();
-
+			//	The double star looks weird, but I guess having to dereference a "pointer" to a pointer call for measures like these.
+			it = GameManager::instance()->onEnemyCaught(*(*it));
+			break;
+		}
+		if ((*it)->escaped())
+		{
+			it = GameManager::instance()->onEnemyEscaped(*(*it));
 			break;
 		}
 
 		//	Only iterate forward if the enemy in this iteration has not been deleted.
 		it++;
 	};
-
-	//	Regulating enemy spawning
-	m_spawnTimer += deltaTime;
-
-	if (m_spawnTimer < m_maxSpawnInterval) return;
-	spawn(rand() % GameManager::instance()->screenWidth);
-	m_spawnTimer = 0;
 }
 
-void EnemyManager::spawn(float xPos)
+void EnemyManager::spawn(Vector pos)
 {
-	m_enemies.push_front(new Enemy(m_idCounter++, xPos));
+	m_enemies.push_front(new Enemy(m_idCounter++, pos));
 }
 
 std::list<Enemy*>::iterator EnemyManager::despawn(Enemy& enemy)

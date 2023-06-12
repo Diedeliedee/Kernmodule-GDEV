@@ -23,6 +23,11 @@ bool Object::collidesWith(Object& other)
 	return m_sprite->bounds.collidesWith(other.m_sprite->bounds, m_position, other.m_position);
 }
 
+Vector Object::getPosition()
+{
+	return m_position;
+}
+
 void Object::setPosition(Vector pos)
 {
 	m_position = pos;

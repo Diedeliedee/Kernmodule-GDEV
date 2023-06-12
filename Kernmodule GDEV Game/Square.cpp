@@ -16,6 +16,7 @@ Square& Square::operator=(const Square& other)
 
 void Square::draw(sf::RenderWindow& window, Vector pos)
 {
+	m_shape.setFillColor(m_color);
 	m_shape.setPosition(bounds.getOffset(pos, Vector(-1, -1)).cast());
 	window.draw(m_shape);
 }

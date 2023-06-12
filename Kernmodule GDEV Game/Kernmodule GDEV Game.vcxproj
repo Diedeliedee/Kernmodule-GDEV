@@ -160,8 +160,10 @@
     <ClCompile Include="PlayerInput.cpp" />
     <ClCompile Include="ScoreManager.cpp" />
     <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Square.cpp" />
+    <ClCompile Include="TimeManager.cpp" />
     <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +177,7 @@
     <ClInclude Include="Objects.h" />
     <ClInclude Include="PlayerInput.h" />
     <ClInclude Include="Shapes.h" />
+    <ClInclude Include="TimeManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

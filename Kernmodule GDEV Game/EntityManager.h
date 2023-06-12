@@ -21,5 +21,9 @@ public:
 
 	void tick(float deltaTime);
 
+	Player& getPlayer();
+
+	EnemyManager& getEnemies();
+
 	void draw(sf::RenderWindow& window);
 };

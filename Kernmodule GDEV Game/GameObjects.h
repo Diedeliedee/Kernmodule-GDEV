@@ -5,8 +5,8 @@
 class Player : public InputObject
 {
 private:
-	const float m_width = 150;
-	const float m_height = 20;
+	const float m_width = 128;
+	const float m_height = 32;
 
 	const float m_bounceFactor = 0.5f;
 
@@ -19,7 +19,7 @@ public:
 
 	void tick(float deltaTime);
 
-	void bounce();
+	void regulateBounce();
 };
 
 
@@ -27,9 +27,6 @@ public:
 class Enemy : public PhysicsObject
 {
 private:
-	const float m_width = 20;
-	const float m_height = 20;
-
 	const int m_minSwitchInterval = 10;
 	const int m_maxSwitchInterval = 50;
 	const int m_maxForceRange = 400;
@@ -43,9 +40,13 @@ public:
 
 	Enemy(int id);
 
-	Enemy(int id, float xPos);
+	Enemy(int id, Vector pos);
 
 	void tick(float deltaTime);
 
-	void bounce();
+	void regulateBounce();
+
+	void regulateForce(float deltaTime);
+
+	bool escaped();
 };

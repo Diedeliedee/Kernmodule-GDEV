@@ -2,6 +2,7 @@
 #include "EntityManager.h"
 #include "ScoreManager.h"
 #include "CameraManager.h"
+#include "TimeManager.h"
 
 class GameManager
 {
@@ -11,22 +12,25 @@ private:
 	// For now the pros seem to outmatch the cons.
 	static GameManager* m_instance;
 
+	
+
 public:
 	//	Properties:
-	int screenWidth = 600;
-	int screenHeight = 800;
-	float frameRate = 60;
-	sf::String windowName = "EPIC DEFLECTION GAME 1.0!!";
+	int screenWidth					= 600;
+	int screenHeight				= 800;
+	float frameRate					= 60;
+	sf::String windowName			= "EPIC DEFLECTION GAME 1.0!!";
 
-	float deltaTime = 1 / frameRate;
+	float deltaTime					= 1 / frameRate;
 
 	//	References:
-	sf::RenderWindow* activeWindow = nullptr;
+	sf::RenderWindow* activeWindow	= nullptr;
 
 	//	Sub-managers:
-	EntityManager* entities = nullptr;	//	If this isn't a pointer, then the EntityManager will get created before the singleton reference.
-	ScoreManager* score = nullptr;
-	CameraManager* camera = nullptr;
+	EntityManager* entities			= nullptr;	//	If this isn't a pointer, then the EntityManager will get created before the singleton reference.
+	ScoreManager* score				= nullptr;
+	CameraManager* camera			= nullptr;
+	TimeManager* time				= nullptr;
 
 	//	Functions:
 	GameManager();
@@ -38,4 +42,9 @@ public:
 	void tick();
 
 	void draw();
+
+	//	Events:
+	std::list<Enemy*>::iterator onEnemyCaught(Enemy& enemy);
+
+	std::list<Enemy*>::iterator onEnemyEscaped(Enemy& enemy);
 };

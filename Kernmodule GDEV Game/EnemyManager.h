@@ -8,17 +8,24 @@
 class EnemyManager
 {
 private:
+	//	Properties:
 	const float m_minSpawnInterval = 0.5f;
 	const float m_maxSpawnInterval = 1;
-	float m_spawnTimer = 0;
+	const int m_maxSpawnHeight = 250;
 
+	//	Run-time:
 	std::list<Enemy*> m_enemies = std::list<Enemy*>();
+	float m_spawnTimer = 0;
 	int m_idCounter = 0;
 
 public:
 	void tick(Player& player, float deltaTime);
 
-	void spawn(float xPos);
+	void regulateSpawning(float deltaTime);
+
+	void regulateEnemies(Player& player, float deltaTime);
+
+	void spawn(Vector pos);
 
 	std::list<Enemy*>::iterator despawn(Enemy& enemy);
 

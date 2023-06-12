@@ -19,8 +19,18 @@ void EntityManager::tick(float deltaTime)
 	m_enemyManager.tick(*m_player, deltaTime);
 }
 
+Player& EntityManager::getPlayer()
+{
+	return *m_player;
+}
+
+EnemyManager& EntityManager::getEnemies()
+{
+	return m_enemyManager;
+}
+
 void EntityManager::draw(sf::RenderWindow& window)
 {
-	m_player->draw(window);
 	m_enemyManager.draw(window);
+	m_player->draw(window);
 }

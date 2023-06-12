@@ -20,6 +20,8 @@ public:
 
 	bool collidesWith(Object& other);
 
+	Vector getPosition();
+
 	void setPosition(Vector pos);
 
 	void move(Vector offset);

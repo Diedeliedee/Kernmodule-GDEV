@@ -8,12 +8,12 @@ Enemy::Enemy(int id)
 	this->id = id;
 }
 
-Enemy::Enemy(int id, float xPos)
+Enemy::Enemy(int id, Vector pos)
 {
 	this->id = id;
 
-	m_sprite = new Square(m_width, m_height);
-	setPosition(m_sprite->bounds.getOffset(Vector(xPos, 0), Vector(0, -1)));
+	m_sprite = new Sprite("TEX_Enemy.png");
+	setPosition(m_sprite->bounds.getOffset(pos, Vector(0, -1)));
 
 	m_mass = 1;
 	m_drag = 0;
@@ -22,24 +22,35 @@ Enemy::Enemy(int id, float xPos)
 
 void Enemy::tick(float deltaTime)
 {
-	auto halfWidth = m_width / 2;
+	auto halfWidth = m_sprite->bounds.width / 2;
 	auto screenWidth = GameManager::instance()->screenWidth;
 
 	iterateMovement(deltaTime);
+	regulateForce(deltaTime);
+	regulateBounce();
+}
 
-	//	Enemy bouncing.
+void Enemy::regulateBounce()
+{
+	auto halfWidth = m_sprite->bounds.width / 2;
+	auto screenWidth = GameManager::instance()->screenWidth;
+
 	if (m_velocity.x < 0 && m_position.x - halfWidth <= 0)
 	{
 		m_position.x = 0 + halfWidth;
-		bounce();
+		m_velocity.x = -m_velocity.x;
+		m_actingForce = -m_actingForce;
 	}
 	else if (m_velocity.x > 0 && m_position.x + halfWidth >= screenWidth)
 	{
 		m_position.x = screenWidth - halfWidth;
-		bounce();
+		m_velocity.x = -m_velocity.x;
+		m_actingForce = -m_actingForce;
 	}
+}
 
-	//	Guard clause for switching force.
+void Enemy::regulateForce(float deltaTime)
+{
 	m_timer += deltaTime;
 	if (m_timer < m_chosenTime) return;
 
@@ -52,8 +63,7 @@ void Enemy::tick(float deltaTime)
 	m_timer = 0;
 }
 
-void Enemy::bounce()
+bool Enemy::escaped()
 {
-	m_velocity.x = -m_velocity.x;
-	m_actingForce = -m_actingForce;
+	return m_position.y - m_sprite->bounds.height / 2 > GameManager::instance()->screenHeight;
 }

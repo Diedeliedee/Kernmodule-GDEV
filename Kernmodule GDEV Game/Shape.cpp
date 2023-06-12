@@ -10,3 +10,9 @@ void Shape::draw(sf::RenderWindow& window, Vector pos)
 {
 	
 }
+
+void Shape::setColor(sf::Color color)
+{
+	m_color = color;
+}
+
