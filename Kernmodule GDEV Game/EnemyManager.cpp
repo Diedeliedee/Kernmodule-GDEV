@@ -1,14 +1,10 @@
 #include <iostream>
 #include "EnemyManager.h"
+#include "GameManager.h"
 
-EnemyManager::EnemyManager()
+void EnemyManager::tick(Player& player, float deltaTime)
 {
-	m_enemies = std::list<Enemy*>();
-}
-
-void EnemyManager::tick(sf::RenderWindow& window, Player& player, float deltaTime)
-{
-	auto enemiesToDespawn = std::list<Enemy>();
+	auto game = GameManager::instance();
 
 	//	Updating the enemies.
 	for (auto it = m_enemies.begin(); it != m_enemies.end();)
@@ -19,9 +15,19 @@ void EnemyManager::tick(sf::RenderWindow& window, Player& player, float deltaTim
 		/// and not the pointer itself.
 		if ((*it)->collidesWith(player))
 		{
+			//	Debug:
 			std::cout << "Enemy has been hit!" << std::endl;
-			 it = despawn(*(*it));
-			 break;
+
+			//	Despawning:
+			it = despawn(*(*it));
+
+			//	Score management:
+			game->score->updateScore(1);
+
+			//	Aesthetics:
+			game->camera->startShake();
+
+			break;
 		}
 
 		//	Only iterate forward if the enemy in this iteration has not been deleted.
@@ -32,7 +38,7 @@ void EnemyManager::tick(sf::RenderWindow& window, Player& player, float deltaTim
 	m_spawnTimer += deltaTime;
 
 	if (m_spawnTimer < m_maxSpawnInterval) return;
-	spawn(100);
+	spawn(rand() % GameManager::instance()->screenWidth);
 	m_spawnTimer = 0;
 }
 

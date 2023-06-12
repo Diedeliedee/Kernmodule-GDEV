@@ -2,8 +2,7 @@
 
 Bounds::Bounds()
 {
-	width = 0;
-	height = 0;
+
 }
 
 Bounds::Bounds(float w, float h)

@@ -1,26 +1,16 @@
 #include <iostream>
 #include "SFML\Graphics.hpp"
-#include "EntityManager.h"
+#include "GameManager.h"
 
 int main()
 {
-	int screenWidth = 512;
-	int screenHeight = 512;
-	float frameRate = 60;
-	float deltaTime = 1 / frameRate;
+	GameManager game = GameManager();
+	sf::RenderWindow window(sf::VideoMode(game.screenWidth, game.screenHeight), game.windowName);
 
-	sf::RenderWindow window(sf::VideoMode(screenWidth, screenHeight), "I have no idea what I'm doing.");
+	game.activeWindow = &window;
+	window.setFramerateLimit(game.frameRate);	//  Setting a limit on the framerate.
 
-
-#pragma region Test
-
-	EntityManager entities(window);
-
-#pragma endregion
-
-
-	window.setFramerateLimit(frameRate);	//  Setting a limit on the framerate.
-	while (window.isOpen())					//  Main loop.
+	while (window.isOpen())						//  Main loop.
 	{
 		sf::Event event;
 
@@ -31,13 +21,8 @@ int main()
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) window.close();	//	Close window if escape is pressed.
 		}
 
-		//	Tick.
-		entities.tick(window, deltaTime);
-		
-		//	Drawing.
-		window.clear();
-		entities.draw(window);
-		window.display();
+		game.tick();
+		game.draw();
 	}
 	return 0;
 }

@@ -1,11 +1,13 @@
 #pragma once
 #include "SFML/Graphics.hpp"
+#include <cstdlib>
+#include <ctime>
 
 class Vector
 {
 public:
-	float x;
-	float y;
+	float x = 0;
+	float y = 0;
 
 	Vector();
 
@@ -29,11 +31,21 @@ public:
 
 	float sqrMagnitude();
 
+	Vector multipliedScalars(const Vector& other);
+
+	Vector clamped(float length);
+
 	Vector rounded();
 
 	Vector normalized();
 
+	Vector squared();
+
+	Vector inverted();
+
 	sf::Vector2f cast();
+
+	static Vector random();
 };
 
 
@@ -41,8 +53,8 @@ public:
 class Bounds
 {
 public:
-	float width;
-	float height;
+	float width = 0;
+	float height = 0;
 
 	Bounds();
 

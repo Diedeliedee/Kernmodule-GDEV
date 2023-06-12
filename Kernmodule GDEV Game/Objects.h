@@ -6,10 +6,10 @@
 class Object
 {
 protected:
-	Vector m_position;
+	Vector m_position = Vector();
 
 	/// Without this being a pointer, polymorphism will not work.
-	Shape* m_sprite;
+	Shape* m_sprite = nullptr;
 
 public:
 	Object();
@@ -32,7 +32,7 @@ public:
 class DynamicObject : public Object
 {
 protected:
-	Vector m_velocity;
+	Vector m_velocity = Vector();
 
 public:
 	DynamicObject();
@@ -47,16 +47,18 @@ public:
 class PhysicsObject : public DynamicObject
 {
 protected:
-	float m_mass;
-	float m_drag;
+	float m_mass = 1;
+	float m_drag = 0;
+	float m_gravity = 0;
 
-	Vector m_acceleration;
-	Vector m_force;
+	Vector m_acceleration = Vector();
 
 public:
 	PhysicsObject();
 
 	PhysicsObject(Shape* shape, Vector pos, Vector vel);
+
+	void addForce(Vector force);
 
 	void iterateMovement(float deltaTime) override;
 };
@@ -64,10 +66,10 @@ public:
 class InputObject : public DynamicObject
 {
 protected:
-	float m_speed;
-	float m_grip;
+	float m_speed = 0;
+	float m_grip = 0;
 
-	Vector m_desiredVelocity;
+	Vector m_desiredVelocity = Vector();
 
 public:
 	InputObject();

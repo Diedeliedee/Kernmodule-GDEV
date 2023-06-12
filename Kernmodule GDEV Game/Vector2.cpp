@@ -4,8 +4,7 @@
 
 Vector::Vector()
 {
-	x = 0;
-	y = 0;
+
 }
 
 Vector::Vector(float x, float y)
@@ -64,6 +63,21 @@ float Vector::sqrMagnitude()
 	return x * x + y * y;
 }
 
+Vector Vector::multipliedScalars(const Vector& other)
+{
+	return Vector(x * other.x, y * other.y);
+}
+
+
+Vector Vector::clamped(float length)
+{
+	auto currentMag = magnitude();
+
+	if (length < 0) length = -length;
+	if (currentMag > length) currentMag = length;
+	return normalized() * currentMag;
+}
+
 Vector Vector::rounded()
 {
 	return Vector(roundf(x), roundf(y));
@@ -76,7 +90,24 @@ Vector Vector::normalized()
 	return Vector(x / mag, y / mag);
 }
 
+Vector Vector::squared()
+{
+	return Vector(x * x, y * y);
+}
+
+Vector Vector::inverted()
+{
+	return Vector(-x, -y);
+}
+
 sf::Vector2f Vector::cast()
 {
 	return sf::Vector2f(x, y);
+}
+
+Vector Vector::random()
+{
+	auto randOffset = ((float)(rand() % 200) - 100) / 100;
+
+	return Vector(randOffset, randOffset);
 }

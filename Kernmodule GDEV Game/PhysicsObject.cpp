@@ -12,13 +12,22 @@ PhysicsObject::PhysicsObject(Shape* shape, Vector pos, Vector vel) : DynamicObje
 	m_drag = 0;
 }
 
+void PhysicsObject::addForce(Vector force)
+{
+	auto dragForce = ((m_velocity.squared() / 2) * m_drag);
+	auto fFriction = Vector(0, -m_gravity).multipliedScalars(dragForce);
+	auto netForce = force - fFriction;
+
+	m_acceleration = m_acceleration + (netForce / m_mass);
+}
+
 void PhysicsObject::iterateMovement(float deltaTime)
 {
-	m_acceleration.x = (m_force.x -= (powf(m_velocity.x, 2) / 2 * m_drag)) / m_mass;
-	m_acceleration.y = (m_force.y -= (powf(m_velocity.y, 2) / 2 * m_drag)) / m_mass;
-	
-	m_velocity.x += m_acceleration.x * deltaTime;
-	m_velocity.y += m_acceleration.y * deltaTime;
+	///	Applying gravity to the acceleration.
+	m_acceleration = m_acceleration + Vector(0, m_gravity);
+
+	//	Adding acceleration to the velocity.
+	m_velocity = m_velocity + (m_acceleration * deltaTime);
 	
 	move(m_velocity * deltaTime);
 }

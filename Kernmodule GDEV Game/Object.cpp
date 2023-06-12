@@ -1,4 +1,5 @@
 #include <iostream>
+#include "GameManager.h"
 #include "Objects.h"
 
 Object::Object()
@@ -36,5 +37,8 @@ void Object::move(Vector offset)
 
 void Object::draw(sf::RenderWindow& window)
 {
-	m_sprite->draw(window, m_position);
+	//	Normally it would be better if this were to be passed through a parameter.
+	auto offset = GameManager::instance()->camera->offset.inverted();
+
+	m_sprite->draw(window, m_position + offset);
 }

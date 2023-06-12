@@ -1,0 +1,41 @@
+#pragma once
+#include "EntityManager.h"
+#include "ScoreManager.h"
+#include "CameraManager.h"
+
+class GameManager
+{
+private:
+	//	To this day I'm not fully aware of all the downsides of using a singleton pattern.
+	// Above that, I'm not aware of any downsides native to C++ of using this method.
+	// For now the pros seem to outmatch the cons.
+	static GameManager* m_instance;
+
+public:
+	//	Properties:
+	int screenWidth = 600;
+	int screenHeight = 800;
+	float frameRate = 60;
+	sf::String windowName = "EPIC DEFLECTION GAME 1.0!!";
+
+	float deltaTime = 1 / frameRate;
+
+	//	References:
+	sf::RenderWindow* activeWindow = nullptr;
+
+	//	Sub-managers:
+	EntityManager* entities = nullptr;	//	If this isn't a pointer, then the EntityManager will get created before the singleton reference.
+	ScoreManager* score = nullptr;
+	CameraManager* camera = nullptr;
+
+	//	Functions:
+	GameManager();
+
+	~GameManager();
+
+	static GameManager* instance();
+
+	void tick();
+
+	void draw();
+};

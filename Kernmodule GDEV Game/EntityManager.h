@@ -10,16 +10,16 @@ private:
 	/// These variables are pointers, as they are assigned in the stack of the manager's constructor.
 	/// That data, since it's on the stack, and deleted once the scope is left, will probably disappear as well.
 	/// That causes these variables to become "null" in plain C# terms.
-	Player* m_player;
+	Player* m_player = nullptr;
 
-	EnemyManager m_enemyManager;
+	EnemyManager m_enemyManager = EnemyManager();
 
 public:
-	EntityManager(sf::RenderWindow& window);
+	EntityManager();
 
 	~EntityManager();
 
-	void tick(sf::RenderWindow& window, float deltaTime);
+	void tick(float deltaTime);
 
 	void draw(sf::RenderWindow& window);
 };

@@ -1,8 +1,11 @@
 #include "EntityManager.h"
+#include "GameManager.h"
 
-EntityManager::EntityManager(sf::RenderWindow& window)
+EntityManager::EntityManager()
 {
-	m_player = new Player(Vector(window.getSize().x / 2, window.getSize().y * 0.75f));
+	auto game = GameManager::instance();
+
+	m_player = new Player(Vector(game->screenWidth / 2, game->screenHeight * 0.75f));
 }
 
 EntityManager::~EntityManager()
@@ -10,10 +13,10 @@ EntityManager::~EntityManager()
 	delete m_player;
 }
 
-void EntityManager::tick(sf::RenderWindow& window, float deltaTime)
+void EntityManager::tick(float deltaTime)
 {
 	m_player->tick(deltaTime);
-	m_enemyManager.tick(window, *m_player, deltaTime);
+	m_enemyManager.tick(*m_player, deltaTime);
 }
 
 void EntityManager::draw(sf::RenderWindow& window)

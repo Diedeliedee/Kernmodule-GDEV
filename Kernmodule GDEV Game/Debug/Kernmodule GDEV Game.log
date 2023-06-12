@@ -1,2 +1,22 @@
-﻿  EnemyManager.cpp
+﻿  Enemy.cpp
+D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Enemy.cpp(15,33): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Enemy.cpp(15,24): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Enemy.cpp(48,18): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  EnemyManager.cpp
+D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\EnemyManager.cpp(41,15): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  EntityManager.cpp
+D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\EntityManager.cpp(8,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  GameManager.cpp
+D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\GameManager.cpp(45,8): warning C4244: 'argument': conversion from '_Rep' to 'unsigned int', possible loss of data
+          with
+          [
+              _Rep=__int64
+          ]
+  Kernmodule GDEV Game.cpp
+D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Kernmodule GDEV Game.cpp(11,31): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+  Object.cpp
+  Player.cpp
+D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Player.cpp(12,33): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Player.cpp(12,24): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
+  Generating Code...
   Kernmodule GDEV Game.vcxproj -> D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Debug\Kernmodule GDEV Game.exe
