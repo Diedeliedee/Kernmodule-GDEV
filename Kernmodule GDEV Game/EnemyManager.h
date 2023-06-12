@@ -9,8 +9,8 @@ class EnemyManager
 {
 private:
 	//	Properties:
-	const float m_minSpawnInterval = 0.5f;
-	const float m_maxSpawnInterval = 1;
+	const float m_minSpawnInterval = 0.15f;
+	const float m_maxSpawnInterval = 0.6f;
 	const int m_maxSpawnHeight = 250;
 
 	//	Run-time:

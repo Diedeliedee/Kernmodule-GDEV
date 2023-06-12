@@ -1,14 +1,4 @@
-﻿  Enemy.cpp
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Math.h(9,2): warning C4091: 'static ': ignored on left of 'Math' when no variable is declared
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Enemy.cpp(59,18): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  EnemyManager.cpp
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Math.h(9,2): warning C4091: 'static ': ignored on left of 'Math' when no variable is declared
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\EnemyManager.cpp(16,72): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\EnemyManager.cpp(16,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  EntityManager.cpp
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Math.h(9,2): warning C4091: 'static ': ignored on left of 'Math' when no variable is declared
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\EntityManager.cpp(8,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  GameManager.cpp
+﻿  GameManager.cpp
 D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Math.h(9,2): warning C4091: 'static ': ignored on left of 'Math' when no variable is declared
 D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\GameManager.cpp(15,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\GameManager.cpp(15,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -17,21 +7,9 @@ D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV G
           [
               _Rep=__int64
           ]
-  Kernmodule GDEV Game.cpp
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Math.h(9,2): warning C4091: 'static ': ignored on left of 'Math' when no variable is declared
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Kernmodule GDEV Game.cpp(11,31): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-  Object.cpp
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Math.h(9,2): warning C4091: 'static ': ignored on left of 'Math' when no variable is declared
-  Player.cpp
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Math.h(9,2): warning C4091: 'static ': ignored on left of 'Math' when no variable is declared
   SceneManager.cpp
 D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Math.h(9,2): warning C4091: 'static ': ignored on left of 'Math' when no variable is declared
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\SceneManager.cpp(68,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\SceneManager.cpp(68,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  ScoreManager.cpp
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Math.h(9,2): warning C4091: 'static ': ignored on left of 'Math' when no variable is declared
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\ScoreManager.cpp(24,53): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\ScoreManager.cpp(52,58): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\ScoreManager.cpp(52,46): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\SceneManager.cpp(71,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\SceneManager.cpp(71,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Generating Code...
   Kernmodule GDEV Game.vcxproj -> D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Debug\Kernmodule GDEV Game.exe

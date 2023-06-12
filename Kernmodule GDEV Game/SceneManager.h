@@ -15,6 +15,7 @@ private:
 
 	//	End message properties:
 	Text* m_statusText = nullptr;
+	Text* m_detailsText = nullptr;
 
 	bool m_canDrawEndScreen = false;
 

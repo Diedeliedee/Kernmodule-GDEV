@@ -7,6 +7,7 @@ SceneManager::SceneManager(Vector screenSize)
 	m_rightCurtain	= new Curtain(screenSize, 1);
 
 	m_statusText = new Text("", 72);
+	m_detailsText = new Text("", 18);
 }
 
 SceneManager::~SceneManager()
@@ -15,6 +16,7 @@ SceneManager::~SceneManager()
 	delete m_rightCurtain;
 
 	delete m_statusText;
+	delete m_detailsText;
 }
 
 void SceneManager::setCurtainValue(float value)
@@ -57,6 +59,7 @@ bool SceneManager::hasOpened(float deltaTime)
 void SceneManager::setEndScreen(sf::String status, sf::String details)
 {
 	m_statusText->setContent(status);
+	m_detailsText->setContent(details);
 }
 
 void SceneManager::displayEndScreen() {
@@ -70,6 +73,7 @@ void SceneManager::draw(sf::RenderWindow& window)
 	if (m_canDrawEndScreen)
 	{
 		m_statusText->draw(window, Vector(screenSize.x / 2, screenSize.y / 4));
+		m_detailsText->draw(window, screenSize / 2);
 	}
 
 	if (m_curtainValue < 1)

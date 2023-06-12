@@ -16,7 +16,7 @@ private:
 	float m_opacityDecreaseRate = 510;
 
 public: 
-	int scoreGoal = 50;
+	int scoreGoal = 25;
 	int maxTries = 6;
 
 	int score = 0;

@@ -27,8 +27,8 @@ public:
 class Enemy : public PhysicsObject
 {
 private:
-	const int m_minSwitchInterval = 10;
-	const int m_maxSwitchInterval = 50;
+	const int m_minSwitchInterval = 5;
+	const int m_maxSwitchInterval = 25;
 	const int m_maxForceRange = 400;
 
 	float m_actingForce = 0;

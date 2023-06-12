@@ -119,13 +119,13 @@ std::list<Enemy*>::iterator GameManager::onEnemyEscaped(Enemy& enemy)
 void GameManager::onWon()
 {
 	m_state = 2;
-	scene->setEndScreen("You Won!!", "");
+	scene->setEndScreen("You Won!!", "You caught " + std::to_string(score->score) + " cubomycetes!");
 }
 
 void GameManager::onLost()
 {
 	m_state = 2;
-	scene->setEndScreen("You Lost..", "");
+	scene->setEndScreen("You Lost..", "You managed to catch " + std::to_string(score->score) + ".");
 }
 
 void GameManager::draw()
