@@ -7,9 +7,4 @@ D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV G
           [
               _Rep=__int64
           ]
-  SceneManager.cpp
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Math.h(9,2): warning C4091: 'static ': ignored on left of 'Math' when no variable is declared
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\SceneManager.cpp(71,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\SceneManager.cpp(71,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
   Kernmodule GDEV Game.vcxproj -> D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Debug\Kernmodule GDEV Game.exe
