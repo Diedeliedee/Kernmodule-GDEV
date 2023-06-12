@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClCompile Include="Bounds.cpp" />
     <ClCompile Include="CameraManager.cpp" />
+    <ClCompile Include="Curtain.cpp" />
     <ClCompile Include="DynamicObject.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyManager.cpp" />
@@ -154,10 +155,12 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="InputObject.cpp" />
     <ClCompile Include="Kernmodule GDEV Game.cpp" />
+    <ClCompile Include="Math.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="PhysicsObject.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerInput.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="ScoreManager.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -172,6 +175,8 @@
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObjects.h" />
     <ClInclude Include="EntityManager.h" />
+    <ClInclude Include="Math.h" />
+    <ClInclude Include="SceneManager.h" />
     <ClInclude Include="ScoreManager.h" />
     <ClInclude Include="Structs.h" />
     <ClInclude Include="Objects.h" />

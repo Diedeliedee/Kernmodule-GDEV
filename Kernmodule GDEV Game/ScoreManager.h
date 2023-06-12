@@ -6,7 +6,7 @@ class ScoreManager
 {
 private:
 
-	Vector m_scorePosition = Vector(60, 30);
+	Vector m_scorePosition = Vector(120, 60);
 	Vector m_triesPosition = Vector(0, 0);
 
 	Text* m_scoreDisplay = nullptr;

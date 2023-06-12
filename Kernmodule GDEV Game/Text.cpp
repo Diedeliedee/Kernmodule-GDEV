@@ -23,7 +23,9 @@ sf::String Text::setContent(sf::String contents)
 
 void Text::draw(sf::RenderWindow& window, Vector pos)
 {
+	auto bounds = m_text.getGlobalBounds();
+
 	m_text.setFillColor(m_color);
-	m_text.setPosition(pos.cast());
+	m_text.setPosition(Vector(pos.x - bounds.width / 2, pos.y - bounds.height / 2).cast());
 	window.draw(m_text);
 }

@@ -3,6 +3,7 @@
 #include "ScoreManager.h"
 #include "CameraManager.h"
 #include "TimeManager.h"
+#include "SceneManager.h"
 
 class GameManager
 {
@@ -12,7 +13,8 @@ private:
 	// For now the pros seem to outmatch the cons.
 	static GameManager* m_instance;
 
-	
+	int m_state = 0;
+	float m_stateTimer = 0;
 
 public:
 	//	Properties:
@@ -31,6 +33,7 @@ public:
 	ScoreManager* score				= nullptr;
 	CameraManager* camera			= nullptr;
 	TimeManager* time				= nullptr;
+	SceneManager* scene				= nullptr;
 
 	//	Functions:
 	GameManager();
@@ -47,4 +50,8 @@ public:
 	std::list<Enemy*>::iterator onEnemyCaught(Enemy& enemy);
 
 	std::list<Enemy*>::iterator onEnemyEscaped(Enemy& enemy);
+
+	void onWon();
+
+	void onLost();
 };

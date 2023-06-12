@@ -50,3 +50,17 @@ public:
 
 	bool escaped();
 };
+
+
+
+class Curtain : public Object
+{
+private:
+	float m_openXPos;
+	float m_closedXPos;
+
+public:
+	Curtain(Vector screenSize, int side);
+
+	void setState(float value);
+};

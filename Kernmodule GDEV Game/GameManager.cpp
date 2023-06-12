@@ -12,10 +12,16 @@ GameManager::GameManager()
 		m_instance = this;
 	}
 
+	auto screenSize = Vector(screenWidth, screenHeight);
+
 	entities	= new EntityManager();
-	score		= new ScoreManager(Vector(screenWidth, screenHeight));
+	score		= new ScoreManager(screenSize);
 	camera		= new CameraManager();
 	time		= new TimeManager();
+	scene		= new SceneManager(screenSize);
+
+	//	Start with the "curtains" closed.
+	scene->setCurtainValue(0);
 }
 
 GameManager::~GameManager()
@@ -24,6 +30,7 @@ GameManager::~GameManager()
 	delete score;
 	delete camera;
 	delete time;
+	delete scene;
 
 	///	Since the memory the 'activeWindow' member holds, is one layer above the GameManager,
 	/// I suppose the memory won't get leaked if the manager gets deleted.
@@ -45,12 +52,44 @@ void GameManager::tick()
 	auto seed				= std::chrono::duration_cast<std::chrono::milliseconds>(epochTime).count();
 	float scaledDeltaTime	= time->getScaledDeltaTime(deltaTime);
 
-	srand(seed);
+	switch (m_state)
+	{
+	case 0:
+		//	Startup phase:
+		if (scene->hasOpened(deltaTime)) m_state = 1;
+		break;
 
-	time		->tick(deltaTime);
-	score		->tick(deltaTime);
-	entities	->tick(scaledDeltaTime);
-	camera		->tick(scaledDeltaTime);
+	case 1:
+		//	Main game loop:
+		srand(seed);
+
+		time		->tick(deltaTime);
+		score		->tick(deltaTime);
+		entities	->tick(scaledDeltaTime);
+		camera		->tick(scaledDeltaTime);
+		break;
+
+	case 2:
+		//	Closing the curtains if player has either lost or won:
+		score->tick(deltaTime);
+		camera->tick(deltaTime);
+
+		m_stateTimer += deltaTime;
+		if (m_stateTimer < 1) return;
+
+		if (scene->hasClosed(deltaTime))
+		{
+			m_state = 3;
+			m_stateTimer = 0;
+			scene->displayEndScreen();
+		}
+		break;
+
+	case 3:
+		//	Displaying endscreen.
+		scene->hasOpened(deltaTime);
+		break;
+	}
 }
 
 std::list<Enemy*>::iterator GameManager::onEnemyCaught(Enemy& enemy)
@@ -60,9 +99,8 @@ std::list<Enemy*>::iterator GameManager::onEnemyCaught(Enemy& enemy)
 	camera->startShake();
 	if (score->reachedScoreGoal(1))
 	{
-		//	Finish game.
+		onWon();
 	}
-
 	return entities->getEnemies().despawn(enemy);
 }
 
@@ -73,16 +111,39 @@ std::list<Enemy*>::iterator GameManager::onEnemyEscaped(Enemy& enemy)
 	time->timeScale = 0;
 	if (score->depletedAllTries(1))
 	{
-		//	Lose game.
+		onLost();
 	}
-
 	return entities->getEnemies().despawn(enemy);
+}
+
+void GameManager::onWon()
+{
+	m_state = 2;
+	scene->setEndScreen("You Won!!", "");
+}
+
+void GameManager::onLost()
+{
+	m_state = 2;
+	scene->setEndScreen("You Lost..", "");
 }
 
 void GameManager::draw()
 {
 	activeWindow	->clear();
-	score			->draw(*activeWindow);
-	entities		->draw(*activeWindow);
+	switch (m_state)
+	{
+	default:
+		//	Displaying main game loop:
+		score			->draw(*activeWindow);
+		entities		->draw(*activeWindow);
+		scene			->draw(*activeWindow);
+		break;
+
+	case 3:
+		//	Displaying end screen:
+		scene			->draw(*activeWindow);
+		break;
+	}
 	activeWindow	->display();
 }
