@@ -32,6 +32,8 @@ public:
 	void draw(sf::RenderWindow& window, Vector pos) override;
 };
 
+
+
 class Text : public Shape
 {
 protected:

@@ -167,7 +167,7 @@
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Square.cpp" />
     <ClCompile Include="TimeManager.cpp" />
-    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CameraManager.h" />

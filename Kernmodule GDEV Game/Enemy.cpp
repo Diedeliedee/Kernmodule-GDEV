@@ -16,8 +16,8 @@ Enemy::Enemy(int id, Vector pos)
 	setPosition(m_sprite->bounds.getOffset(pos, Vector(0, -1)));
 
 	m_mass = 1;
-	m_drag = 0;
-	m_gravity = 5;
+	m_drag = 0.1f;
+	m_gravity = 500;
 }
 
 void Enemy::tick(float deltaTime)

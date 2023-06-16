@@ -8,13 +8,10 @@
 class GameManager
 {
 private:
-	//	To this day I'm not fully aware of all the downsides of using a singleton pattern.
-	// Above that, I'm not aware of any downsides native to C++ of using this method.
-	// For now the pros seem to outmatch the cons.
 	static GameManager* m_instance;
 
-	int m_state = 0;
-	float m_stateTimer = 0;
+	int m_state						= 0;
+	float m_stateTimer				= 0;
 
 public:
 	//	Properties:
@@ -29,7 +26,7 @@ public:
 	sf::RenderWindow* activeWindow	= nullptr;
 
 	//	Sub-managers:
-	EntityManager* entities			= nullptr;	//	If this isn't a pointer, then the EntityManager will get created before the singleton reference.
+	EntityManager* entities			= nullptr;
 	ScoreManager* score				= nullptr;
 	CameraManager* camera			= nullptr;
 	TimeManager* time				= nullptr;

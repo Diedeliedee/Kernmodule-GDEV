@@ -71,8 +71,8 @@ void GameManager::tick()
 
 	case 2:
 		//	Closing the curtains if player has either lost or won:
-		score->tick(deltaTime);
-		camera->tick(deltaTime);
+		score		->tick(deltaTime);
+		camera		->tick(deltaTime);
 
 		m_stateTimer += deltaTime;
 		if (m_stateTimer < 1) return;
@@ -81,13 +81,13 @@ void GameManager::tick()
 		{
 			m_state = 3;
 			m_stateTimer = 0;
-			scene->displayEndScreen();
+			scene	->displayEndScreen();
 		}
 		break;
 
 	case 3:
 		//	Displaying endscreen.
-		scene->hasOpened(deltaTime);
+		scene		->hasOpened(deltaTime);
 		break;
 	}
 }
@@ -135,14 +135,14 @@ void GameManager::draw()
 	{
 	default:
 		//	Displaying main game loop:
-		score			->draw(*activeWindow);
-		entities		->draw(*activeWindow);
-		scene			->draw(*activeWindow);
+		score		->draw(*activeWindow);
+		entities	->draw(*activeWindow);
+		scene		->draw(*activeWindow);
 		break;
 
 	case 3:
 		//	Displaying end screen:
-		scene			->draw(*activeWindow);
+		scene		->draw(*activeWindow);
 		break;
 	}
 	activeWindow	->display();

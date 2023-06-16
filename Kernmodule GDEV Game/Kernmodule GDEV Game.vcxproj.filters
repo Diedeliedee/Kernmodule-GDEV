@@ -72,9 +72,6 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="Vector2.cpp">
-      <Filter>Source Files\Utilities\Structs</Filter>
-    </ClCompile>
     <ClCompile Include="Bounds.cpp">
       <Filter>Source Files\Utilities\Structs</Filter>
     </ClCompile>
@@ -110,6 +107,9 @@
     </ClCompile>
     <ClCompile Include="Curtain.cpp">
       <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>Source Files\Utilities\Structs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

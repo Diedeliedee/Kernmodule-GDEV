@@ -42,7 +42,7 @@ void Object::move(Vector offset)
 
 void Object::draw(sf::RenderWindow& window)
 {
-	//	Normally it would be better if this were to be passed through a parameter.
+	//	Normally it would be better if data like this were to be passed through a parameter.
 	auto offset = GameManager::instance()->camera->offset.inverted();
 
 	m_sprite->draw(window, m_position + offset);

@@ -12,8 +12,8 @@ Player::Player(Vector pos)
 	m_sprite = new Sprite("TEX_Player.png");
 	setPosition(pos);
 
-	m_speed = 800;
-	m_grip = 10;
+	m_speed = 900;
+	m_grip = 12;
 }
 
 void Player::tick(float deltaTime)

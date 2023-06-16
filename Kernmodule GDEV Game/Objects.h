@@ -65,6 +65,8 @@ public:
 	void iterateMovement(float deltaTime) override;
 };
 
+
+
 class InputObject : public DynamicObject
 {
 protected:

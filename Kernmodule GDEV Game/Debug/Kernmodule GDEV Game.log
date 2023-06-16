@@ -1,10 +1,7 @@
-﻿  GameManager.cpp
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Math.h(9,2): warning C4091: 'static ': ignored on left of 'Math' when no variable is declared
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\GameManager.cpp(15,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\GameManager.cpp(15,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\GameManager.cpp(64,9): warning C4244: 'argument': conversion from '_Rep' to 'unsigned int', possible loss of data
-          with
-          [
-              _Rep=__int64
-          ]
+﻿  Math.cpp
+  The contents of <numbers> are available only with C++20 or later.
+D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Math.h(14,2): warning C4091: 'static ': ignored on left of 'Math' when no variable is declared
+  PhysicsObject.cpp
+D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Math.h(14,2): warning C4091: 'static ': ignored on left of 'Math' when no variable is declared
+  Generating Code...
   Kernmodule GDEV Game.vcxproj -> D:\Projects\HKU\Jaar 1\Blok 4\Kernmodule GDEV ++\[Git] Project\Kernmodule GDEV Game\Debug\Kernmodule GDEV Game.exe

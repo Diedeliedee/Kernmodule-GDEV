@@ -27,7 +27,7 @@ void EnemyManager::regulateEnemies(Player& player, float deltaTime)
 
 		if ((*it)->collidesWith(player))
 		{
-			//	The double star looks weird, but I guess having to dereference a "pointer" to a pointer call for measures like these.
+			//	The double star looks weird, but I guess having to dereference a "pointer" to a pointer calls for measures like these.
 			it = GameManager::instance()->onEnemyCaught(*(*it));
 			break;
 		}

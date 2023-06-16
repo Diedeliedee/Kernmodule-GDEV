@@ -2,6 +2,21 @@
 #include <iomanip>
 #include <numbers>
 #include "Math.h"
+#include "Structs.h"
+
+///	IMPORTANT: Does not work as intended. Requires more research.
+Vector Math::getNetForce(Vector force, Vector velocity, float drag)
+{
+	auto fFriction	= ((velocity.squared() / 2) * drag);
+	auto netForce	= force - fFriction;
+
+	return netForce;
+}
+
+float Math::dotProduct(Vector a, Vector b)
+{
+	return a.x * b.x + a.y * b.y;
+}
 
 float Math::lerp(float a, float b, float t)
 {

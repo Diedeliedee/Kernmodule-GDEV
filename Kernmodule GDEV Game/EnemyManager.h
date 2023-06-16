@@ -11,7 +11,7 @@ private:
 	//	Properties:
 	const float m_minSpawnInterval = 0.15f;
 	const float m_maxSpawnInterval = 0.6f;
-	const int m_maxSpawnHeight = 250;
+	const int m_maxSpawnHeight = 100;
 
 	//	Run-time:
 	std::list<Enemy*> m_enemies = std::list<Enemy*>();
