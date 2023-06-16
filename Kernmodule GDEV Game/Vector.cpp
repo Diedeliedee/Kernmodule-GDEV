@@ -68,7 +68,6 @@ Vector Vector::multipliedScalars(const Vector& other)
 	return Vector(x * other.x, y * other.y);
 }
 
-
 Vector Vector::clamped(float length)
 {
 	auto currentMag = magnitude();
