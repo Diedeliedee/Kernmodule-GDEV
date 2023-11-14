@@ -21,11 +21,16 @@ void PhysicsObject::addForce(Vector force)
 
 void PhysicsObject::iterateMovement(float deltaTime)
 {
+	auto speed = m_velocity.magnitude();
+
 	//	Applying gravity to the velocity.
 	m_velocity = m_velocity + (Vector(0, m_gravity) * deltaTime);
 
 	//	Adding acceleration to the velocity.
 	m_velocity = m_velocity + (m_acceleration * deltaTime);
-	
+
+	//	Applying drag to the velocity;
+	m_velocity = m_velocity.clamped(speed - m_drag * deltaTime);
+
 	move(m_velocity * deltaTime);
 }
